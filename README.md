@@ -10,19 +10,98 @@
 
 <br>
 
-Video account growth & monetization system: content strategy, viral pattern library, and low-pressure monetization for blue V accounts.
+Video account growth & monetization: content strategy, viral pattern library, and low-pressure monetization for blue V accounts.
 
 <br>
 </div>
 
 ## Features
 
-- **Content Strategy** - AI tools / efficiency templates / small business automation focus
-- **Viral Pattern Library** - Analyzed high-retention patterns, opening 3s hooks, drop reasons
-- **Platform Rules Memory** - Douyin/WeChat Video Account compliance rules and review gates
-- **Video Production** - Remotion-based video generation with TTS integration
+- **Content Strategy** - AI tools / efficiency templates / small business automation
+- **Viral Pattern Library** - High-retention patterns, opening 3s hooks, drop reasons
+- **Platform Rules Memory** - Douyin/WeChat Video compliance rules
+- **Video Production** - Remotion-based video generation with TTS
 - **Low-Pressure Monetization** - Blue V accounts, faceless content, document products
-- **Research Integration** - Competitor analysis, trend tracking, pattern extraction
+
+## Prerequisites
+
+| Requirement | Version | Notes |
+|-------------|---------|-------|
+| Python | 3.11+ | Required |
+| pip | Latest | Python package manager |
+| Node.js | 18+ | For Remotion video building (optional) |
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/lhlzzz/video-growth.git
+cd video-growth
+```
+
+### 2. Install Python dependencies (core)
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install manually:
+
+```bash
+pip install edge-tts
+```
+
+### 3. Install Node.js dependencies (for video building, optional)
+
+```bash
+npm install
+```
+
+### 4. Verify installation
+
+```bash
+python3 self_media_profit_agent.py --help
+```
+
+## Usage
+
+### Run the profit agent
+
+```bash
+python3 self_media_profit_agent.py
+```
+
+### Build video from script
+
+```bash
+python3 scripts/build-video.py
+```
+
+### Generate TTS audio
+
+```bash
+python3 scripts/generate-tts.py
+```
+
+### Browse viral patterns
+
+```bash
+ls viral_pattern_library/
+cat viral_pattern_library/INDEX.md
+```
+
+### Check platform rules
+
+```bash
+cat platform_rules_memory/INDEX.md
+```
+
+### Review high retention patterns
+
+```bash
+cat high_retention_pattern_library/INDEX.md
+```
 
 ## Architecture
 
@@ -34,13 +113,14 @@ video-growth/
 │   ├── generate-tts.py                 # Edge TTS generator
 │   └── samples/                        # Script samples
 ├── viral_pattern_library/              # Viral content patterns
-├── opening_3s_library/                 # First 3 seconds hook library
+├── opening_3s_library/                 # First 3s hook library
 ├── platform_rules_memory/              # Platform compliance rules
 ├── high_retention_pattern_library/     # High retention patterns
 ├── drop_reason_library/                # Why viewers leave
 ├── content_production_validation_engine/  # Content validation
 ├── reports/                            # Strategy reports
-└── docs/                               # Documentation
+├── requirements.txt                    # Python dependencies
+└── package.json                        # Node.js dependencies (optional)
 ```
 
 ## Content Strategy
@@ -53,97 +133,53 @@ video-growth/
 
 ### Monetization Paths
 
-1. **Blue V Account Operations** - Professional account management
-2. **Faceless Content** - No-face video production
-3. **Document Products** - Low-price information products
-4. **橱窗变现** - Product showcase monetization
-
-## Viral Pattern Library
-
-### Opening 3s Hooks
-
-- Problem → Solution framing
-- Before → After transformation
-- Question → Answer pattern
-- Controversy → Resolution
-
-### High Retention Patterns
-
-- Step-by-step tutorial format
-- Story-driven problem solving
-- Data-driven insights
-- Behind-the-scenes content
-
-### Drop Reasons
-
-- Slow opening
-- Unclear value proposition
-- Too much text on screen
-- Poor audio quality
-- Mismatch between hook and content
-
-## Platform Rules
-
-### Douyin Compliance
-
-- No misleading claims
-- No prohibited content categories
-- Proper disclosure for sponsored content
-- Video quality requirements
-
-### WeChat Video Account
-
-- Blue V verification requirements
-- Content categorization rules
-- Monetization eligibility criteria
-- Anti-spam guidelines
+1. Blue V Account Operations
+2. Faceless Content Production
+3. Document Products (low-price)
+4. Product Showcase Monetization
 
 ## Video Production
 
-### Remotion Pipeline
+### Using Remotion (optional)
 
 ```bash
+# Install dependencies
+npm install
+
 # Build video
-python scripts/build-video.py
-
-# Generate TTS
-python scripts/generate-tts.py
+python3 scripts/build-video.py
 ```
 
-### Content Validation
+### Using Edge TTS
 
 ```bash
-# Run validation engine
-python content_production_validation_engine/validate.py
-```
-
-## Usage
-
-### Research Patterns
-
-```bash
-# Browse viral patterns
-ls viral_pattern_library/
-
-# Check platform rules
-cat platform_rules_memory/INDEX.md
-
-# Review high retention patterns
-cat high_retention_pattern_library/INDEX.md
-```
-
-### Generate Content
-
-```bash
-# Build video from script
-python scripts/build-video.py --script scripts/samples/01-common-mistakes.json
+pip install edge-tts
+python3 scripts/generate-tts.py
 ```
 
 ## Safety
 
-- **No Live Actions** - No publishing, messaging, or account automation without approval
-- **Research Only** - All outputs are for internal review
-- **Compliance First** - Platform rules checked before any content
+- **No Live Actions** - No publishing without approval
+- **Research Only** - All outputs for internal review
+- **Compliance First** - Platform rules checked before content
+
+## Troubleshooting
+
+### "ModuleNotFoundError: No module named 'edge_tts'"
+
+```bash
+pip install edge-tts
+```
+
+### Node.js not found (for video building)
+
+Install from https://nodejs.org/ or skip video building features.
+
+### Permission denied on scripts
+
+```bash
+chmod +x scripts/*.py
+```
 
 ## License
 
